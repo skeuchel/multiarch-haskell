@@ -10,16 +10,16 @@ env:
     - DOCKER_REPO=skeuchel/multiarch-haskell
 
   matrix:
-    - SUITE=jessie ARCH=amd64
-    - SUITE=jessie ARCH=arm64
-    - SUITE=jessie ARCH=armel
-    - SUITE=jessie ARCH=armhf
-    - SUITE=jessie ARCH=i386
-    - SUITE=jessie ARCH=mips
-    - SUITE=jessie ARCH=mipsel
-    - SUITE=jessie ARCH=powerpc
-    - SUITE=jessie ARCH=ppc64el
-    - SUITE=jessie ARCH=s390x
+    # - SUITE=jessie ARCH=amd64
+    # - SUITE=jessie ARCH=arm64
+    # - SUITE=jessie ARCH=armel
+    # - SUITE=jessie ARCH=armhf
+    # - SUITE=jessie ARCH=i386
+    # - SUITE=jessie ARCH=mips
+    # - SUITE=jessie ARCH=mipsel
+    # - SUITE=jessie ARCH=powerpc
+    # - SUITE=jessie ARCH=ppc64el
+    # - SUITE=jessie ARCH=s390x
 
     - SUITE=stretch ARCH=amd64
     - SUITE=stretch ARCH=arm64
@@ -42,14 +42,12 @@ env:
 before_script:
   - sudo apt-get update -qq
   - sudo apt-get install --only-upgrade dpkg
-  - echo "deb http://archive.ubuntu.com/ubuntu bionic main universe" | sudo tee -a /etc/apt/sources.list
+  - echo "deb http://archive.ubuntu.com/ubuntu cosmic main universe" | sudo tee -a /etc/apt/sources.list
   - sudo apt-get update -qq
-  - sudo apt-get -yt bionic install qemu-user-static
+  - sudo apt-get -yt cosmic install qemu-user-static
 
 script:
   - sudo ./build.sh -d "$DOCKER_REPO" -s "$SUITE" -a "$ARCH"
 
 after_success:
-  - if [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then
-      docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && docker push $DOCKER_REPO
-    fi
+  - if [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && docker push $DOCKER_REPO; fi
