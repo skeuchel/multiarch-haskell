@@ -31,14 +31,13 @@ HASKELL_PACKAGES="aeson aeson-pretty ansi-terminal ansi-wl-pprint async
     case-insensitive cassava categories cereal clock colour comonad
     contravariant data-default-class distributive dlist entropy exceptions
     extensible-exceptions fingertree free hashable haskell-lexer hostname hspec
-    hunit lazysmallcheck lens mmorph monad-control monad-par monad-par-extras
-    mtl mwc-random network optparse-applicative parallel parsec3 parsers pipes
-    pipes-safe pretty-show primitive profunctors quickcheck-io quickcheck2
-    random regex-base regex-posix scientific semigroupoids semigroups split
-    statevar statistics stm tagged tasty tasty-hunit tasty-quickcheck
-    test-framework test-framework-hunit test-framework-quickcheck2
-    transformers-base transformers-compat unix-compat unix-time
-    unordered-containers utf8-string vault vector vector-algorithms
+    hunit lazysmallcheck lens mmorph monad-control mtl mwc-random network
+    optparse-applicative parallel parsec3 parsers pipes pipes-safe pretty-show
+    primitive profunctors quickcheck-io quickcheck2 random regex-base
+    regex-posix scientific semigroupoids semigroups split statevar stm tagged
+    tasty tasty-hunit tasty-quickcheck test-framework test-framework-hunit
+    test-framework-quickcheck2 transformers-base transformers-compat unix-compat
+    unix-time unordered-containers utf8-string vault vector vector-algorithms
     vector-binary-instances void xml zlib"
 
 ## Select additional libraries depending on suite
