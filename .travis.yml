@@ -38,6 +38,13 @@ env:
     - SUITE=buster ARCH=mipsel
     - SUITE=buster ARCH=ppc64el
 
+before_script:
+  - sudo apt-get update -qq
+  - sudo apt-get install --only-upgrade dpkg
+  - echo "deb http://archive.ubuntu.com/ubuntu bionic main universe" | sudo tee -a /etc/apt/sources.list
+  - sudo apt-get update -qq
+  - sudo apt-get -yt bionic install qemu-user-static
+
 script:
   - sudo ./build.sh -d "$DOCKER_REPO" -s "$SUITE" -a "$ARCH"
 
