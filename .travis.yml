@@ -1,0 +1,47 @@
+sudo: required
+
+services:
+  - docker
+language: bash
+
+env:
+  global:
+    - DOCKER_REPO=skeuchel/multiarch-haskell
+
+  matrix:
+    - SUITE=jessie ARCH=amd64
+    - SUITE=jessie ARCH=arm64
+    - SUITE=jessie ARCH=armel
+    - SUITE=jessie ARCH=armhf
+    - SUITE=jessie ARCH=i386
+    - SUITE=jessie ARCH=mips
+    - SUITE=jessie ARCH=mipsel
+    - SUITE=jessie ARCH=powerpc
+    - SUITE=jessie ARCH=ppc64el
+    - SUITE=jessie ARCH=s390x
+
+    - SUITE=stretch ARCH=amd64
+    - SUITE=stretch ARCH=arm64
+    - SUITE=stretch ARCH=armel
+    - SUITE=stretch ARCH=armhf
+    - SUITE=stretch ARCH=i386
+    - SUITE=stretch ARCH=mips
+    - SUITE=stretch ARCH=mipsel
+    - SUITE=stretch ARCH=ppc64el
+
+    - SUITE=buster ARCH=amd64
+    - SUITE=buster ARCH=arm64
+    - SUITE=buster ARCH=armel
+    - SUITE=buster ARCH=armhf
+    - SUITE=buster ARCH=i386
+    - SUITE=buster ARCH=mips
+    - SUITE=buster ARCH=mipsel
+    - SUITE=buster ARCH=ppc64el
+
+script:
+  - sudo ./build.sh -d "$DOCKER_REPO" -s "$SUITE" -a "$ARCH"
+
+after_success:
+  - if [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then
+      docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && docker push $DOCKER_REPO
+    fi
