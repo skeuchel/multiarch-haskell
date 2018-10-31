@@ -42,25 +42,16 @@ test-framework test-framework-hunit test-framework-quickcheck2 transformers-base
 transformers-compat unix-compat unix-time unordered-containers utf8-string vault
 vector vector-algorithms vector-binary-instances void xml zlib"
 
-HASKELL_STRETCH_PACKAGES="base-orphans cabal-doctest call-stack criterion fixed
-generics-sop half"
+HASKELL_STRETCH_PACKAGES="base-orphans criterion fixed generics-sop half"
 
-HASKELL_BUSTER_PACKAGES=""
+HASKELL_BUSTER_PACKAGES="cabal-doctest call-stack"
 
+HASKELL_PACKAGES=""
 ## Select additional libraries depending on suite
 case "$SUITE" in
-    buster)
-        HASKELL_PACKAGES="
-            $HASKELL_JESSIE_PACKAGES
-            $HASKELL_STRETCH_PACKAGES
-            $HASKELL_BUSTER_PACKAGES"
-        ;&
-    stretch)
-        HASKELL_PACKAGES="$HASKELL_JESSIE_PACKAGES $HASKELL_STRETCH_PACKAGES"
-        ;&
-    jessie)
-        HASKELL_PACKAGES="$HASKELL_JESSIE_PACKAGES"
-        ;;
+    buster)  HASKELL_PACKAGES+=" $HASKELL_BUSTER_PACKAGES"  ;& # Fall through
+    stretch) HASKELL_PACKAGES+=" $HASKELL_STRETCH_PACKAGES" ;& # Fall through
+    jessie)  HASKELL_PACKAGES+=" $HASKELL_JESSIE_PACKAGES"  ;;
     *)
         echo "Unknown suite: $SUITE"
         exit 1
