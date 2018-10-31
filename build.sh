@@ -31,20 +31,21 @@ hscolour locales pkg-config wget"
 HASKELL_JESSIE_PACKAGES="aeson aeson-pretty ansi-terminal ansi-wl-pprint async
 attoparsec base16-bytestring base64-bytestring bifunctors blaze-builder
 case-insensitive cassava categories cereal clock colour comonad conduit
-contravariant data-default-class deepseq directory distributive dlist entropy
-exceptions extensible-exceptions fast-logger fingertree free hashable
-haskell-lexer hostname hspec hunit lazysmallcheck lens mmorph monad-control
-monad-logger monad-logger mtl mwc-random network optparse-applicative parallel
-parsec3 parsers pipes pipes-safe pointed pretty-show primitive profunctors
-quickcheck-io quickcheck2 random regex-base regex-posix scientific semigroupoids
-semigroups split statevar stm syb tagged tasty tasty-hunit tasty-quickcheck
-test-framework test-framework-hunit test-framework-quickcheck2 transformers-base
-transformers-compat unix-compat unix-time unordered-containers utf8-string vault
-vector vector-algorithms vector-binary-instances void xml zlib"
+contravariant crypto-api data-default-class deepseq digest directory
+distributive dlist entropy exceptions extensible-exceptions fast-logger
+fingertree free hashable haskell-lexer hostname hspec hunit lazysmallcheck lens
+mmorph monad-control monad-logger monad-logger mtl mwc-random network
+optparse-applicative parallel parsec3 parsers pipes pipes-safe pointed
+pretty-show primitive profunctors quickcheck-io quickcheck2 random regex-base
+regex-posix scientific semigroupoids semigroups split statevar stm syb tagged
+tasty tasty-hunit tasty-quickcheck test-framework test-framework-hunit
+test-framework-quickcheck2 transformers-base transformers-compat unix-compat
+unix-time unordered-containers utf8-string vault vector vector-algorithms
+vector-binary-instances void xml zlib "
 
 HASKELL_STRETCH_PACKAGES="base-orphans criterion fixed generics-sop half"
 
-HASKELL_BUSTER_PACKAGES="cabal-doctest call-stack"
+HASKELL_BUSTER_PACKAGES="cabal-doctest call-stack murmur-hash"
 
 HASKELL_PACKAGES=""
 ## Select additional libraries depending on suite
