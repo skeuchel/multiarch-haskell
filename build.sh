@@ -77,7 +77,8 @@ ENV LANG            C.UTF-8
 # Install packages
 RUN set -ex; \
     apt-get update; \
-    apt-get install -y --no-install-recommends $PKGS; \
+    DEBIAN_FRONTEND=noninteractive \
+      apt-get install -y --no-install-recommends $PKGS; \
     rm -rf /var/lib/apt/lists/*
 
 # Generate locale en_US.UTF-8 and set it
