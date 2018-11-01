@@ -36,12 +36,12 @@ distributive dlist entropy exceptions extensible-exceptions fast-logger
 fingertree free hashable haskell-lexer hostname hspec hunit lazysmallcheck lens
 mmorph monad-control monad-logger monad-logger mtl mwc-random network
 optparse-applicative parallel parsec3 parsers pipes pipes-safe pointed
-pretty-show primitive profunctors quickcheck-io quickcheck2 random regex-base
-regex-posix scientific semigroupoids semigroups split statevar stm syb tagged
-tasty tasty-hunit tasty-quickcheck test-framework test-framework-hunit
-test-framework-quickcheck2 transformers-base transformers-compat unix-compat
-unix-time unordered-containers utf8-string vault vector vector-algorithms
-vector-binary-instances void xml zlib "
+pretty-show primitive profunctors quickcheck-instances quickcheck-io quickcheck2
+random regex-base regex-posix scientific semigroupoids semigroups split statevar
+stm syb tagged tasty tasty-hunit tasty-quickcheck test-framework
+test-framework-hunit test-framework-quickcheck2 transformers-base
+transformers-compat unix-compat unix-time unordered-containers utf8-string vault
+vector vector-algorithms vector-binary-instances void xml zlib"
 
 HASKELL_STRETCH_PACKAGES="base-orphans criterion fixed generics-sop half"
 
