@@ -21,7 +21,7 @@ TAG="$SUITE-$ARCH"
 
 # For building haskell packages with cabal
 PKGS="alex ca-certificates cabal-install curl dnsutils ghc git gnupg2 happy \
-hscolour locales pkg-config wget"
+hscolour locales pkg-config wget cpphs"
 
 # For building haskell debian packages
 #PKGS+=" ghc-doc ghc-prof debhelper haskell-devscripts cdbs cabal-debian dpkg-dev"
