@@ -20,8 +20,8 @@ TAG="$SUITE-$ARCH"
 ################################################################################
 
 # For building haskell packages with cabal
-PKGS="alex ca-certificates cabal-install curl dnsutils ghc git gnupg2 happy \
-hscolour locales pkg-config wget cpphs"
+PKGS="alex ca-certificates cabal-install cpphs curl dnsutils ghc git gnupg2 \
+happy hscolour locales pkg-config wget"
 
 # For building haskell debian packages
 #PKGS+=" ghc-doc ghc-prof debhelper haskell-devscripts cdbs cabal-debian dpkg-dev"
@@ -35,7 +35,7 @@ contravariant crypto-api data-default-class deepseq digest directory
 distributive dlist entropy exceptions extensible-exceptions fast-logger
 fingertree free hashable haskell-lexer hostname hspec hunit lazysmallcheck lens
 mmorph monad-control monad-logger monad-logger mtl mwc-random network
-optparse-applicative parallel parsec3 parsers pipes pipes-safe pointed
+optparse-applicative parallel parsec3 parsers pipes pipes-safe pointed polyparse
 pretty-show primitive profunctors quickcheck-instances quickcheck-io quickcheck2
 random regex-base regex-posix scientific semigroupoids semigroups split statevar
 stm syb tagged tasty tasty-hunit tasty-quickcheck test-framework
